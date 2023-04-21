@@ -1,6 +1,7 @@
 // var createError = require('http-errors');
 // var express = require('express');
 import 'dotenv/config.js'
+import './config/database.js'
 import createError from 'http-errors'
 import express from 'express'
 

@@ -8,7 +8,6 @@ import logger from 'morgan' //middleware que registra peticiones y errores HTTP
 import {__dirname} from './utils.js'
 
 import indexRouter from './routes/index.js'
-import usersRouter from './routes/users.js'
 
 const app = express()
 
@@ -24,7 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 //routes
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
 
 //catch 404 and forward to error handler
 app.use(function(req, res, next) {

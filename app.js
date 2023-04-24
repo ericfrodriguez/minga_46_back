@@ -5,6 +5,7 @@ import createError from 'http-errors' //métodos para definir errores
 import express from 'express' //metodos de express para configurar y levantar servidores
 import path from 'path' //metodos para trabajar con rutas de archivos y directorios
 import logger from 'morgan' //middleware que registra peticiones y errores HTTP
+import cors from 'cors'
 import {__dirname} from './utils.js'
 
 import indexRouter from './routes/index.js'
@@ -16,6 +17,7 @@ app.set('view engine', 'ejs') //configuro el motor de vistas generadas por el ba
 app.set('views', path.join(__dirname, 'views')) //configuro donde van a estar las vistas
 
 //middlewares
+app.use(cors())
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))

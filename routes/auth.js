@@ -1,5 +1,6 @@
 import express from 'express'
-const router = express.Router();
+import create from '../controllers/users/create.js'
+const router = express.Router()
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -10,5 +11,7 @@ router.get('/admins',(req,res,next)=>res.status(200).json({
   success:true,
   admins: []
 }))
+
+router.post('/signup',create)
 
 export default router

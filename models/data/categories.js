@@ -7,7 +7,7 @@ export let categories = [
         character_photo: "https://i.postimg.cc/0jdQ27GW/shonen-character.png",
         cover_photo: "https://i.postimg.cc/SK3jZSNr/shonen-cover.png"
     },{
-        name: "comic",
+        name: "comics",
         color: "#8883F0",
         hover: "#E0DBFF",
         description: "Marvel, DC and anothers comics",

@@ -1,7 +1,14 @@
-import { Router } from "express"
+import create from '../controllers/categories/create.js'
 import read from '../controllers/categories/read.js'
+import one from '../controllers/categories/one.js'
+
+import passport from '../middlewares/passport.js'
+
+import { Router } from "express"
 let router = Router()
 
+router.post('/',passport.authenticate('jwt',{session:false}),create)
 router.get('/',read)
+router.get('/:category_id',passport.authenticate('jwt',{session:false}),one)
 
 export default router

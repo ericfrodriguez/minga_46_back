@@ -1,4 +1,6 @@
 import express from 'express'
+
+import passport from '../middlewares/passport.js'
 import userRouter from './auth.js'
 import authorRouter from './authors.js'
 import categoryRouter from './categories.js'
@@ -9,23 +11,13 @@ import chapterRouter from './chapters.js'
 const router = express.Router()
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', {
-    title: 'MINGA API',
-    subtitle: 'endpoints of minga'
-  })
-})
+router.get('/', (req,res,next) => res.render('index', { title: 'MINGA API', subtitle: 'endpoints of minga' }))
 
-const midd1 = (req, res, next) => {
-  console.log('Solo estoy en categories')
-  next()
-}
-
-router.use('/auth',userRouter)
-router.use('/authors',authorRouter)
-router.use('/categories', midd1,categoryRouter)
-router.use('/companies',companyRouter)
-router.use('/mangas',mangaRouter)
-router.use('/chapters',chapterRouter)
+router.use('/auth', userRouter)
+router.use('/authors', passport.authenticate('jwt',{session:false}), authorRouter)
+router.use('/categories', categoryRouter)
+router.use('/companies', passport.authenticate('jwt',{session:false}), companyRouter)
+router.use('/mangas', passport.authenticate('jwt',{session:false}), mangaRouter)
+router.use('/chapters', passport.authenticate('jwt',{session:false}), chapterRouter)
 
 export default router

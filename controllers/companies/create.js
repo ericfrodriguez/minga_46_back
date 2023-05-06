@@ -1,8 +1,8 @@
-import Author from '../../models/Author.js'
+import Company from '../../models/Company.js'
 
 export default async(req,res,next) => {
     try {
-        let one = await Author.create(req.body)
+        let one = await Company.create(req.body)
         return res.status(201).json({
             id: one._id,
             timestamps: one.createdAt

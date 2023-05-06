@@ -1,15 +1,15 @@
 import Author from "../../models/Author.js"
 
-let read = async(req,res,next)=> {
+let one = async(req,res,next)=> {
     try {
-        let all = await Author.find()
+        let one = await Author.findOne({ _id:req.params.author_id })
         return res.status(200).json({
             success: 'ok',
-            response: all
+            response: one
         })
     } catch (error) {
         next(error)
     }
 }
 
-export default read
+export default one

@@ -348,7 +348,7 @@ export let mangas_v1 = [
         title: 'Flashpoint',
         cover_photo: 'https://i.postimg.cc/bJjf6Q43/main-flashpoint.jpg',
         description: 'edit later',
-        category_id: 'comic',
+        category_id: 'comics',
         author_id: 'eric',
         company_id: 'Peace',
         chapters: [
@@ -378,7 +378,7 @@ export let mangas_v1 = [
         title: 'Planet Hulk',
         cover_photo: 'https://i.postimg.cc/V6HWZ9k2/main-planet-hulk.jpg',
         description: 'edit later',
-        category_id: 'comic',
+        category_id: 'comics',
         author_id: 'eric',
         chapters: [
             {
@@ -427,7 +427,7 @@ export let mangas_v1 = [
         title: 'Secret invasion',
         cover_photo: 'https://i.postimg.cc/hjG00Zc9/main-secret-invasion.jpg',
         description: 'edit later',
-        category_id: 'comic',
+        category_id: 'comics',
         author_id: 'alejandro',
         chapters: [
             {
@@ -472,7 +472,7 @@ export let mangas_v1 = [
         title: 'Superman up in the sky',
         cover_photo: 'https://i.postimg.cc/g0XV2hSy/superman-sky-001-01.jpg',
         description: 'edit later',
-        category_id: 'comic',
+        category_id: 'comics',
         author_id: 'alejandro',
         chapters: [
             {
@@ -505,7 +505,7 @@ export let mangas_v1 = [
         title: 'World War Hulk',
         cover_photo: 'https://i.postimg.cc/cHtX22GS/main-world-war-hulk.jpg',
         description: 'edit later',
-        category_id: 'comic',
+        category_id: 'comics',
         author_id: 'eric',
         chapters: [
             {

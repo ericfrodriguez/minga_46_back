@@ -1,15 +1,15 @@
 import Chapter from "../../models/Chapter.js"
 
-let read = async(req,res,next)=> {
+let one = async(req,res,next)=> {
     try {
-        let all = await Chapter.find()
+        let one = await Chapter.findOne({ _id:req.params.chapter_id })
         return res.status(200).json({
             success: 'ok',
-            response: all
+            response: one
         })
     } catch (error) {
         next(error)
     }
 }
 
-export default read
+export default one

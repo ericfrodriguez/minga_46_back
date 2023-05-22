@@ -9,6 +9,7 @@ let schema = new Schema({
     title: { type:String,required:true },
     cover_photo:  { type:String,required:true },
     pages:  [{ type:String,required:true }],
+    //pages: { type:Array,required:true },
     order: { type:Number,required:true }
 },{
     timestamps: true

@@ -1,18 +1,17 @@
 import Category from "../../models/Category.js"
 
-let destroy = async(req,res,next) => {
+async function destroy(req,res,next) {
     try {
-        console.log(req.params)
-        let destroyed = await Category.deleteOne({ name:req.params.name,color:req.params.color })
-        if (destroyed.deletedCount) {
+        let response = await Category.deleteOne({ _id:req.params.id })
+        if (response.deletedCount) {
             return res.status(200).json({
                 success: true,
-                destroyed
+                message: 'deleted'
             })
         } else {
             return res.status(404).json({
                 success: false,
-                message: ''
+                message: 'not found!'
             })
         }
     } catch (error) {

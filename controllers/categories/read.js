@@ -1,18 +1,15 @@
-import createHttpError from 'http-errors'
 import Category from "../../models/Category.js"
 
-let read = async(req,res,next)=> {
+let read = async(req,res)=> {
     try {
         let all = await Category.find()
-        if (all.length===0) {
-            return next(createHttpError(404, 'El recurso no se encontro'))
-        }
         return res.status(200).json({
-            success: 'ok',
             response: all
         })
     } catch (error) {
-        next(error)
+        return res.status(500).json({
+            response: 'error'
+        })
     }
 }
 

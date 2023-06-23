@@ -1,4 +1,5 @@
 import 'dotenv/config.js'                 //configurar las variables de entorno de la aplicación
+import './config/db.js'                   //configurar la conexión con la db
 import express from 'express'             //modulo necesario para levantar y configurar un servidor
 import path from 'path'                   //modulo necesario para conocer la ubicación de nuestro servidor
 import logger from 'morgan'               //modulo para registrar las peticiones que se realizan al servidor

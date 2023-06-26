@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "users": "node ./models/data/users.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

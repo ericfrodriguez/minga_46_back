@@ -17,6 +17,6 @@ export default async(req,res,next)=> {
             }
         })
     } catch (error) {
-        return next()
+        return next(error)
     }
 }

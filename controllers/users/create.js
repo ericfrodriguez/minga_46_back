@@ -1,6 +1,6 @@
 import User from '../../models/User.js'
 
-export default async (req, res) => {
+export default async (req, res, next) => {
     try {
         const one = await User.create(req.body);
 
@@ -10,11 +10,6 @@ export default async (req, res) => {
             message: 'User created'
         })
     } catch (error) {
-        console.log(error)                  //consologueo el error
-        return res.status(500).json({       //envío al cliente OTRA respuesta con los datos que quiera
-            response:null,
-            success:false,
-            message:error.message
-        })
+        next(error)
     }
 }

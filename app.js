@@ -7,6 +7,11 @@ import cors from 'cors'                   //modulo para permitir origines cruzad
 import { __dirname } from './utils.js'    //importo la confgiuración de la ruta padre
 import indexRouter from './routes/index.js'   //enrutador principal de la aplicación
 
+import notFoundHandler from './middlewares/notFound.js'
+import errorHandler from './middlewares/errorHandler.js'
+
+
+
 let app = express();                      //defino una variable con la ejecución del módulo de express para poder CREAR un servidor
 
 //VIEWS
@@ -17,13 +22,26 @@ app.set('view engine', 'ejs');                    //configuro que las vistas se 
 //MIDDLEWARES
 //son funciones que se ejecutan con cada petición y que van a PERMITIR/NO PERMITIR realizar algo
 //use es un método QUE OBLIGA (en este caso) A MI APLICACION a usar algo (ejecutar una función)
+app.use(cors())                                           //obliga al servidor a permitir el cruce de origines de front/back
 app.use(logger('dev'));                                   //obliga al servidor a usar el middleware de registro de peticiones
 app.use(express.json());                                  //obliga al servidor a transformar/manejar formato json (post/put)
 app.use(express.urlencoded({ extended: false }));         //obliga al servidor a acceder a consultas complejas (permite leer queries y params de una petición)
 app.use(express.static(path.join(__dirname, 'public')));  //obliga al servidor a generar una carpeta de acceso PUBLICO al cliente
-app.use(cors())                                           //obliga al servidor a permitir el cruce de origines de front/back
+
+// app.post(); // Solamente responde a peticiones POST
+
+// const printYear = (req, res, next) => {
+//     console.log('Time (app.js): ', new Date().getFullYear()); //* Imprimir Time: 2023
+
+//     next();
+// }
+
+// app.use(printYear);
 
 //ENDPOINTS
 app.use('/api', indexRouter);                             //obliga al servidor a usar las rutas definidas en el enrutador principal con la palabrita "/api"
+
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 export default app

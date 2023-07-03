@@ -5,10 +5,10 @@ let schema = new Schema({           //molde de los datos que se van a guardar en
     email: { type:String,required:true },
     password: { type:String,required:true },
     photo: { type:String,required:true },
-    role: { type:Number,required:true },
+    role: { type:Number },
     online: { type:Boolean },
-    verified: { type:Boolean,required:true },
-    verify_code: { type:String,required:true }
+    verified: { type:Boolean },
+    verify_code: { type:String }
 },{
     timestamps:true
 })

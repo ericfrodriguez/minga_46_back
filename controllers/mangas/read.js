@@ -13,10 +13,10 @@ export default async (req, res, next) => {
     if (order) {
         sort.title = order
     }
-    console.log(sort)
     try {
         let mangas = await Manga.find(queries)
         .select("-createdAt -updatedAt -__v")
+        .sort(sort)
         res.status(200).json({ mangas, success: true })
     } catch (error) {
         return next(error)

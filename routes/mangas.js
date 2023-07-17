@@ -12,7 +12,4 @@ manga_router.get('/', read)
 manga_router.get('/:id', readOne)
 manga_router.put('/:id', update)
 manga_router.delete('/:id', deleteOne)
-//manga_router.put()
-//manga_router.delete()
-
 export default manga_router

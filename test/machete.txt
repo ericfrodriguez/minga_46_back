@@ -1,0 +1,13 @@
+    describe: Es una función proporcionada por Mocha que se utiliza para agrupar pruebas relacionadas. Sirve para definir un conjunto de pruebas que tienen un propósito común, como probar un conjunto específico de rutas de una API o un módulo de una aplicación. La función describe toma dos argumentos: una cadena descriptiva del grupo de pruebas y una función que contiene las pruebas agrupadas.
+
+    it: También es una función de Mocha y se utiliza para definir una prueba específica o un requerimiento a ser probado. Al igual que describe, it también toma una cadena descriptiva y una función que contiene la prueba real.
+
+    expect: Es una función de la librería de aserciones Chai. Se utiliza para realizar afirmaciones en las pruebas y comprobar si el resultado esperado coincide con el resultado real. expect toma un valor o una expresión que se evalúa y se compara con el valor esperado.
+
+    to.be.an: Es una parte de la sintaxis de Chai que se utiliza para verificar el tipo de un valor. En este caso, expect(respuesta.body) está verificando si el cuerpo de la respuesta es un objeto.
+
+    request(app): Esto es parte de la librería SuperTest. request es una función proporcionada por SuperTest que crea una solicitud HTTP para la API definida por app, que es una instancia de tu aplicación Express. Te permite realizar solicitudes HTTP simuladas a tu API para probar sus rutas y obtener respuestas para realizar aserciones.
+
+    Las pruebas no generan documentos reales en la base de datos. En su lugar, las pruebas de integración, como las que estás realizando con SuperTest, realizan solicitudes HTTP a la API y verifican las respuestas. Puedes usar bibliotecas como Sinon o Mockgoose para simular la interacción con la base de datos y evitar modificar datos reales durante las pruebas.
+
+    send: En el contexto de SuperTest, send es una función que toma un objeto y envía ese objeto como datos en el cuerpo de la solicitud HTTP. En tu código, estás enviando el objeto userBody como datos en la solicitud POST para registrar un nuevo usuario en la API.
